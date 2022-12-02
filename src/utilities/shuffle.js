@@ -8,7 +8,7 @@ const shuffle = () => {
         { image: '/assets/mandalorian.png' },
         { image: '/assets/me_gusta.png' },
         { image: '/assets/pressf.png' },   
-        { image: '/assets/clapping.png' },
+        { image: '/assets/1.png' },
     ];
     return [...assets, ...assets]
         .sort(() => Math.random() - 0.5)
