@@ -1,26 +1,27 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-const UseAppBadge = () => {
-    const [counter, setCounter] = useState(1);
-    const setBadge = () => {
-        setCounter(counter + 1);
-        if (navigator.setAppBadge) {
-            navigator.setAppBadge(counter);
-        } else if (navigator.setClientBadge) {
-            navigator.setClientBadge();
-        }
-    };
+const useAppBadge = () => {
+  const [counter, setCounter] = useState(1);
 
-    const clearBadge = () => {
-        setCounter(1);
-        if (navigator.clearAppBadge){
-            navigator.clearAppBadge();
-        } else if (navigator.clearClientBadge){
-            navigator.clearClientBadge();
-        }
-    };
+  const setBadge = () => {
+    setCounter(counter + 1);
+    if (navigator.setAppBadge) {
+      navigator.setAppBadge(counter);
+    } else if (navigator.setClientBadge) {
+      navigator.setClientBadge();
+    }
+  };
 
-    return [setBadge, clearBadge]
+  const clearBadge = () => {
+    setCounter(1);
+    if (navigator.clearAppBadge) {
+      navigator.clearAppBadge();
+    } else if (navigator.clearClientBadge) {
+      navigator.clearClientBadge();
+    }
+  };
+
+  return [setBadge, clearBadge];
 };
 
-export default UseAppBadge;
+export default useAppBadge;
