@@ -8,6 +8,7 @@ const Card = ({ image, selected, onClick }) => {
                     alt=""
                     className="card-back"
                     src={"/assets/terebonk.jpg"}
+                    onClick = {onClick}
                 />
             </div>
         </div>
